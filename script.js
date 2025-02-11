@@ -8,17 +8,21 @@ form.addEventListener("submit", (e) => {
 		alert("Please enter valid details")
 		return
 	}
-	let prom = new Promise((resolve, reject) => {
-	if(age.value > 18){
-		resolve(setTimeout(() => {
-			alert(`Welcome, ${name.value}. You can vote.`)
-		}, 4000))
-	}
-	if(age.value < 18){
-	    reject(setTimeout(() => {
-	    	alert("Oh sorry . You aren't old enough.")
-	    }, 4000))
-	}   
-    })
+	let prom = new Promise((res, rej) => {
+		if(age.value > 18){
+			setTimeout(() => {
+				res(alert(`Welcome, ${name.value}. You can vote.`))
+			}, 4000)
+		}else{
+			setTimeout(() => {
+				rej(alert(`Oh sorry ${name.value}. You aren't old enough.`))
+			},4000)
+		}
+	})
+	prom.then(() => {
+		console.log("Successfull")
+	}).catch(() => {
+		console.log("Error")
+	})
 })
 
