@@ -13,11 +13,10 @@ form.addEventListener("submit", (e) => {
 		resolve(setTimeout(() => {
 			alert(`Welcome, ${name.value}. You can vote.`)
 		}, 4000))
-	}else{
-		reject(setTimeout(() => {
-			alert("Oh sorry . You aren't old enough.")
-		}, 4000))
 	}
+	reject(setTimeout(() => {
+		alert("Oh sorry . You aren't old enough.")
+	}, 4000))
     })
 })
 
