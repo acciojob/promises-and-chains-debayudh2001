@@ -5,7 +5,7 @@ let age = document.querySelector("#age")
 form.addEventListener("submit", (e) => {
 	e.preventDefault()
 	if(name.value == "" && age.value == ""){
-		alert("Please enter valid details.")
+		alert("Please enter valid details")
 		return
 	}
 	let prom = new Promise((resolve, reject) => {
