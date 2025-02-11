@@ -11,10 +11,10 @@ form.addEventListener("submit", (e) => {
 	let prom = new Promise((resolve, reject) => {
 	if(age.value > 18){
 		resolve(setTimeout(() => {
-			alert("Welcome, . You can vote.")
+			alert(`Welcome, ${name.value}. You can vote.`)
 		}, 4000))
 	}else{
-		resolve(setTimeout(() => {
+		reject(setTimeout(() => {
 			alert("Oh sorry . You aren't old enough.")
 		}, 4000))
 	}
